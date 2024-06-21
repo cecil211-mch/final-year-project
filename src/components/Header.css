@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0; 
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+
+.nav-right a {
+  text-decoration: none; 
+  color:white; 
+  margin-right: 15px;
+  font-weight: bold; 
+}
+.notification-icon {
+  font-size: 1em; 
+  color: white; 
+  cursor: pointer; 
+}
+  
+.header {
+  background-color: hsl(140, 90%, 20%);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+
+.header h1 {
+  color: white;
+  font-size: 1em; 
+  margin: 0; 
+  font-weight: bold; 
+}
+.notification-icon {
+  position: absolute;
+  right: 10px; 
+  font-size: 1em;
+  transform: translateY(-50%); 
+  color: white;
+}

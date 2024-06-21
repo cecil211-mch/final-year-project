@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './Header'; // Assuming Header is defined elsewhere
+import './login.css';
+import Header from './Header'; 
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
     <div className="login-page">
-      <Header /> {/* Add the Header component here */}
+      <Header /> 
       <div className="login-container">
         <h2>Welcome to SmartFarm</h2>
         <div className="login-form">

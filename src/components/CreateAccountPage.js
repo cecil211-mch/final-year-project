@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from './Header'; // Assuming Header.js exists
-import Footer from './Footer'; // Assuming Footer.js exists
-import { Link } from 'react-router-dom'; // For navigation to Login page
+import Header from './Header'; 
+import Footer from './Footer'; 
+import './CreatAccountPage.css';
+import { Link } from 'react-router-dom'; 
 
 const CreateAccountPage = () => {
   return (
     <div className="create-account-page">
-      <Header /> {/* Add the Header component here */}
-      <div className="content-container">  {/* Wrap main content */}
+      <Header /> 
+      <div className="content-container">  
         <div className="welcome-container">
           <h2>Welcome to SmartFarm</h2>
         </div>
@@ -35,7 +36,7 @@ const CreateAccountPage = () => {
           </p>
         </div>
       </div>
-      <Footer /> {/* Include the Footer component */}
+      <Footer /> 
     </div>
   );
 };

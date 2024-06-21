@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './Header'; // Assuming Header is defined elsewhere
-import Footer from './Footer'; // Assuming Footer is defined elsewhere
+import Header from './Header';
+import './SmartFarmContent.css'; 
+import Footer from './Footer'; 
 import { Link } from 'react-router-dom';
 
 const SmartFarmContent = () => {
   return (
-    <div className="smart-farm-app">  {/* Wrap everything in a container */}
-      <Header /> {/* Add Header component here */}
+    <div className="smart-farm-app">  
+      <Header /> 
       <main className="smart-farm-content">
         <img src="background.jpg" alt="Farm Background image" />
         <div className="content-overlay">
@@ -16,7 +17,7 @@ const SmartFarmContent = () => {
           </button>
         </div>
       </main>
-      <Footer /> {/* Include the Footer component */}
+      <Footer /> 
     </div>
   );
 };

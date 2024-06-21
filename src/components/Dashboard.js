@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // For navigation
-import Footer from './Footer'; // Assuming Footer component is defined elsewhere
+import { Link } from 'react-router-dom'; 
+import Footer from './Footer'; 
 import './Dashboard.css';
 import Header  from './Header';
 import { Card } from 'react-bootstrap';
-
-// Placeholder sensor data (replace with actual data fetching logic)
 const sensorData = {
   pH: 6.5,
   EC: 0.35,
@@ -42,7 +40,7 @@ const Dashboard = () => {
           <p>{sensorData.soilMoisture}</p>
         </div>
       </div>
-      <Link to="/analysis" className="analysis-button">
+      <Link to="/Analysis" className="analysis-button">
         View Analysis with AI
       </Link>
       <Footer />

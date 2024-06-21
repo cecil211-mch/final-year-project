@@ -1,0 +1,32 @@
+.smart-farm-content {
+    position: relative;
+  }
+  
+  .smart-farm-content img {
+    width: 100%;
+    height: 84vh;
+    object-fit: content;
+  }
+  
+  .content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  .content-overlay h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .content-overlay button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
