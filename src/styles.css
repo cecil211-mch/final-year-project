@@ -15,7 +15,7 @@ body {
   
   
   
-  /* Navbar styles (assuming separate Navbar component) */
+  /* Navbar styles  */
   .nav-right {
     display: flex;
     align-items: center;
@@ -77,8 +77,8 @@ body {
   
   .smart-farm-content img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    height: 84vh;
+    object-fit: content;
   }
   
   .content-overlay {
@@ -250,7 +250,6 @@ a {
   color: green; /* Link color */
   text-decoration: none; /* Remove underline */
 }
-  
   /* footer styling*/
   .footer {
     text-align: center; /* Center the content horizontally */
@@ -258,5 +257,5 @@ a {
     background-color: #f2f2f2; /* Light gray background */
     color: #333; /* Text color */
     font-size: 0.8em; /* Adjust font size (optional) */
-    margin-top: 20px; /* Add some space above the footer */
+    margin-bottom: 0px; 
   }

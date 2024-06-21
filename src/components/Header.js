@@ -11,7 +11,7 @@ function Header() {
                 </div>
                 
                 <div className="nav-right">
-                    <Link to="/create-account">Create Account</Link>
+                    <Link to="/CreateAccountPage">Create Account</Link>
                     <Link to="/login">Login</Link>
                     <FontAwesomeIcon icon={faBell} className="notification-icon" />
                 </div>

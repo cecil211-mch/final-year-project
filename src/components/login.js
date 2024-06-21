@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from './Header'; // Assuming Header is defined elsewhere
 import Footer from './Footer';
-import { Link } from 'react-router-dom'; // For navigation to Create Account page
+import { Link } from 'react-router-dom';
 
-const login = () => {
+const Login = () => {
   return (
     <div className="login-page">
+      <Header /> {/* Add the Header component here */}
       <div className="login-container">
         <h2>Welcome to SmartFarm</h2>
         <div className="login-form">
@@ -14,18 +16,17 @@ const login = () => {
             <input type="email" id="email" name="email" required />
             <label htmlFor="password">Enter Password</label>
             <input type="password" id="password" name="password" required />
-            <button type="submit">Login</button> {/* Replace with actual form submission logic */}
+            <Link to="../Dashboard"><button type="submit">Login</button></Link>
           </form>
           <p>OR</p>
-          <Link to="/create-account" style={{ color: 'black' }}>
-  Don't have an account? <span style={{ color: 'green' }}>Create Account</span>
-</Link>
-
+          <Link to="/CreateAccountPage" style={{ color: 'black' }}>
+            Don't have an account? <span style={{ color: 'green' }}>Create Account</span>
+          </Link>
         </div>
       </div>
-      <Footer /> {/* Include the Footer component */}
+      <Footer />
     </div>
   );
 };
 
-export default login;
+export default Login;
