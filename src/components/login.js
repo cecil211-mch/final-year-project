@@ -9,7 +9,7 @@ const Login = () => {
     <div className="login-page">
       <Header /> 
       <div className="login-container">
-        <h2>Welcome to SmartFarm</h2>
+       
         <div className="login-form">
           <h3>Login</h3>
           <form>

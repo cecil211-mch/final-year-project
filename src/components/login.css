@@ -1,15 +1,6 @@
-.login-page {
-    display: flex; 
-    min-height: 100vh;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    background-color: #f0f0f0; 
-  }
-  
   .login-container {
-    background-color: #fff; 
-    padding: 30px;
+    background-color:rgb(246, 240, 240); 
+    padding : 30px;
     border-radius: 5px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   }
@@ -46,7 +37,7 @@
   
   .login-form button {
     background-color: green;
-    color: whit;
+    color: white;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

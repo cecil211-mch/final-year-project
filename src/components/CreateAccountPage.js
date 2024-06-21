@@ -9,9 +9,6 @@ const CreateAccountPage = () => {
     <div className="create-account-page">
       <Header /> 
       <div className="content-container">  
-        <div className="welcome-container">
-          <h2>Welcome to SmartFarm</h2>
-        </div>
         <div className="form-container">
           <h3>Create Account</h3>
           <div>
@@ -30,9 +27,9 @@ const CreateAccountPage = () => {
             </form>
           </div>
           <p>
-            <Link to="/login" style={{ color: 'black' }}>
-              Already having an account? <span style={{ color: 'green' }}>Login</span>
-            </Link>
+          <Link to="/login" style={{ color: 'black' }}>
+            Already have an account? <span style={{ color: 'green' }}>Login</span>
+          </Link>
           </p>
         </div>
       </div>

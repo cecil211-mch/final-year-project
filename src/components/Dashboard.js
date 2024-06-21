@@ -1,47 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
-import Footer from './Footer'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 import './Dashboard.css';
-import Header  from './Header';
-import { Card } from 'react-bootstrap';
+import Header from './Header';
+import { Card } from 'react-bootstrap'; // Assuming you're using Bootstrap for cards
+
 const sensorData = {
   pH: 6.5,
   EC: 0.35,
-  temperature: 25,
-  humidity: 60,
-  soilMoisture: 30,
+  Temperature: 25,
+  Humidity: 60,
+  SoilMoisture: 30,
 };
 
 const Dashboard = () => {
   return (
-    
     <div className="">
-        <Header/>
-      
+      <Header />
+
       <div className="sensor-cards">
-        <div className="sensor-card">
-          <h3>pH</h3>
-          <p>{sensorData.pH}</p>
-        </div>
-        <div className="sensor-card">
-          <h3>EC (mS/cm)</h3>
-          <p>{sensorData.EC}</p>
-        </div>
-        <div className="sensor-card">
-          <h3>Temperature (°C)</h3>
-          <p>{sensorData.temperature}</p>
-        </div>
-        <div className="sensor-card">
-          <h3>Humidity (%)</h3>
-          <p>{sensorData.humidity}</p>
-        </div>
-        <div className="sensor-card">
-          <h3>Soil Moisture (%)</h3>
-          <p>{sensorData.soilMoisture}</p>
+        {/* Row container for cards */}
+        <div className="d-flex flex-row justify-content-around">
+          {Object.entries(sensorData).map(([key, value]) => (
+            <Card key={key} className="sensor-card mx-2">
+              {/* Card header */}
+              <Card.Header>{key}</Card.Header>
+              {/* Card body */}
+              <Card.Body>
+                <Card.Title>{value}</Card.Title>
+              </Card.Body>
+            </Card>
+          ))}
         </div>
       </div>
+
       <Link to="/Analysis" className="analysis-button">
-        View Analysis with AI
+        View Analysis
       </Link>
       <Footer />
     </div>
