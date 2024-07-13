@@ -1,23 +1,29 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
-import './SmartFarmContent.css'; 
-import Footer from './Footer'; 
-import { Link } from 'react-router-dom';
+import Footer from './Footer';
+import './SmartFarmContent.css';
 
 const SmartFarmContent = () => {
+  const navigate = useNavigate();
+
+  const handleGetStartedClick = () => {
+    navigate('/CreateAccountPage');
+  };
+
   return (
-    <div className="smart-farm-app">  
-      <Header /> 
+    <div className="smart-farm-app">
+      <Header />
       <main className="smart-farm-content">
-        <img src="background.jpg" alt="Farm Background image" />
+        <div className="background-container">
+          <img src="background.jpeg" alt="Farm Background" className="background-image" />
+        </div>
         <div className="content-overlay">
           <h1>Welcome to SmartFarm</h1>
-          <button>
-            <Link to="/login">Get Started</Link>
-          </button>
+          <button onClick={handleGetStartedClick}>Get Started</button>
         </div>
       </main>
-      <Footer /> 
+      <Footer />
     </div>
   );
 };
