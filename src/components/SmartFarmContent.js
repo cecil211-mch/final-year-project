@@ -16,7 +16,7 @@ const SmartFarmContent = () => {
       <Header />
       <main className="smart-farm-content">
         <div className="background-container">
-          <img src="background.jpeg" alt="Farm Background" className="background-image" />
+          <img src="public\background.jpeg" alt="Farm Background" className="background-image" />
         </div>
         <div className="content-overlay">
           <h1>Welcome to SmartFarm</h1>

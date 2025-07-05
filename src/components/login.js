@@ -15,7 +15,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear inputs and error when the component mounts
     setEmail('');
     setPassword('');
     setError(null);
@@ -25,7 +24,6 @@ const Login = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        // Only redirect if the user is not on the login page
         if (window.location.pathname !== '/login') {
           navigate('/dashboard');
         }
@@ -38,7 +36,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(null); // Clear previous errors
+    setError(null);
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -93,9 +91,16 @@ const Login = () => {
                 />
                 <label htmlFor="showPassword">Show Password</label>
               </div>
-              <button type="submit" className="login-button" disabled={isLoading}>
-                {isLoading ? 'Logging in...' : 'Login'}
-              </button>
+
+              {/* Buttons side-by-side */}
+              <div className="login-actions">
+                <button type="submit" className="login-button" disabled={isLoading}>
+                  {isLoading ? 'Logging in...' : 'Login'}
+                </button>
+                <Link to="/forgot-password" className="forgot-password-inline">
+                  Forgot Password?
+                </Link>
+              </div>
             </form>
           </div>
           {error && <p className="error-message">{error}</p>}

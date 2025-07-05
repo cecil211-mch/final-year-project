@@ -95,7 +95,19 @@
   background-color: rgb(34, 113, 34);;
   cursor: not-allowed;
 }
+ .forgot-password-inline {
+  font-size: 0.9rem;
+  color: rgb(34, 113, 34); /* Match your green theme */
+  font-weight: bold;
+  text-decoration: none; /* Ensure no underline */
+}
 
+.forgot-password-inline:hover {
+  text-decoration: none; /* Keep it clean on hover too */
+}
+.forgot-password-inline:hover {
+  text-decoration: underline;
+}
 .clear-form-btn {
   background-color: white;
   color: var(--primary-green);
