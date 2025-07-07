@@ -5,6 +5,8 @@ import Dashboard from './components/Dashboard'; // Assuming dashboard.js is defi
 import SmartFarmContent from './components/SmartFarmContent';
 import CreateAccountPage from './components/CreateAccountPage';
 import ForgotPassword from './components/ForgotPassword';
+import Notification from './components/Notification';
+import Settings from './components/Settings';
 import { Navigate } from 'react-router-dom';
 const App = () => {
   return (
@@ -13,7 +15,9 @@ const App = () => {
         <Route path="" element={<SmartFarmContent/>} />
         <Route path="/CreateAccountPage" element={<CreateAccountPage/>}/>
         <Route path="/login"element={<Login/>}/>
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/Notification" element={<Notification/>}/>
+        <Route path ="/Settings" element={<Settings/>}/>
       
         <Route path="/dashboard" element={<Dashboard />} />
 

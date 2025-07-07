@@ -17,11 +17,15 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "recharts": "^2.12.7",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   },
   "scripts": {
-    "start": "node node_modules/react-scripts/scripts/start.js",
-    "build": "node node_modules/react-scripts/scripts/build.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -44,10 +48,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "react-scripts": "^5.0.1"
   },
   "homepage": "http://cecil211-mch.github.io/final-year-project"
 }

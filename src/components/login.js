@@ -32,24 +32,25 @@ const Login = () => {
 
     return () => unsubscribe();
   }, [navigate]);
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
+  e.preventDefault();
+  setIsLoading(true);
+  setError(null);
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/dashboard');
-      setEmail('');
-      setPassword('');
-      setIsLoading(false);
-    } catch (error) {
-      setError('Failed to log in. Please check your credentials.');
-      console.error("Login error:", error);
-      setIsLoading(false);
-    }
-  };
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    const redirectPath = localStorage.getItem('redirectAfterLogin') || '/dashboard';
+    localStorage.removeItem('redirectAfterLogin');
+    navigate(redirectPath);
+    setEmail('');
+    setPassword('');
+    setIsLoading(false);
+  } catch (error) {
+    setError('Failed to log in. Please check your credentials.');
+    console.error("Login error:", error);
+    setIsLoading(false);
+  }
+};
 
   return (
     <div className="login-container">
@@ -97,7 +98,7 @@ const Login = () => {
                 <button type="submit" className="login-button" disabled={isLoading}>
                   {isLoading ? 'Logging in...' : 'Login'}
                 </button>
-                <Link to="/forgot-password" className="forgot-password-inline">
+                <Link to="/ForgotPassword" className="forgot-password-inline">
                   Forgot Password?
                 </Link>
               </div>
@@ -117,5 +118,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
