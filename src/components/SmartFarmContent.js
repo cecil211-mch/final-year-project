@@ -31,9 +31,6 @@ const SmartFarmContent = () => {
               <button onClick={handleLoginClick} className="btn-primary">Login</button>
             </div>
           </div>
-          <div className="smart-farm-illustration">
-            <img src="/illustration-farm.svg" alt="Farm Technology Illustration" />
-          </div>
         </div>
       </main>
       <Footer />

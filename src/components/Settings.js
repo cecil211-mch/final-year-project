@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Settings.css';
 import { Settings, Bell, Sliders, LogOut } from 'lucide-react';
+import Header from './Header';
+import Footer from './Footer';
+import './Settings.css';
 
 const SettingsPage = () => {
-  const navigate = useNavigate(); // ⬅️ Add this to use routing
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({ name: 'Cecilia', email: 'user@example.com' });
   const [notifications, setNotifications] = useState({
     soilMoisture: true,
@@ -33,67 +35,79 @@ const SettingsPage = () => {
   };
 
   const handleLogout = () => {
-    // You can clear auth state here if needed
-    // Example: auth.signOut(); localStorage.clear();
-    navigate('/'); // Redirects to landing page
+    navigate('/');
   };
 
   return (
-    <div className="settings-container">
-      <div className="settings-header">
-        <Settings className="icon" />
-        <h2>Settings</h2>
-        <p>Manage your account, preferences, and system behavior</p>
-      </div>
-
-      {/* Profile Settings */}
-      <section className="settings-section">
-        <h3><Sliders className="inline-icon" /> Profile</h3>
-        <div className="form-group">
-          <label>Name</label>
-          <input type="text" name="name" value={profile.name} onChange={handleProfileChange} />
+    <div className="settings-page">
+      <Header />
+      <main className="settings-container">
+        <div className="settings-header">
+          <Settings className="icon" />
+          <h2>Settings</h2>
+          <p>Manage your account, preferences, and system behavior</p>
         </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" name="email" value={profile.email} onChange={handleProfileChange} />
-        </div>
-      </section>
 
-      {/* Notifications */}
-      <section className="settings-section">
-        <h3><Bell className="inline-icon" /> Notifications</h3>
-        {Object.keys(notifications).map((key) => (
-          <div key={key} className="toggle-group">
-            <label>{key.charAt(0).toUpperCase() + key.slice(1)} Alerts</label>
+        {/* Profile Settings */}
+        <section className="settings-section">
+          <h3><Sliders className="inline-icon" /> Profile</h3>
+          <div className="form-group">
+            <label>Name</label>
+            <input type="text" name="name" value={profile.name} onChange={handleProfileChange} />
+          </div>
+          <div className="form-group">
+            <label>Email</label>
+            <input type="email" name="email" value={profile.email} onChange={handleProfileChange} />
+          </div>
+        </section>
+
+        {/* Notifications */}
+        <section className="settings-section">
+          <h3><Bell className="inline-icon" /> Notifications</h3>
+          {Object.keys(notifications).map((key) => (
+            <div key={key} className="toggle-group">
+              <label>{key.charAt(0).toUpperCase() + key.slice(1)} Alerts</label>
+              <input
+                type="checkbox"
+                checked={notifications[key]}
+                onChange={() => handleNotificationToggle(key)}
+              />
+            </div>
+          ))}
+        </section>
+
+        {/* System Thresholds */}
+        <section className="settings-section">
+          <h3><Sliders className="inline-icon" /> System Thresholds</h3>
+          <div className="form-group">
+            <label>Min Soil Moisture (%)</label>
             <input
-              type="checkbox"
-              checked={notifications[key]}
-              onChange={() => handleNotificationToggle(key)}
+              type="number"
+              name="soilMoisture"
+              value={thresholds.soilMoisture}
+              onChange={handleThresholdChange}
             />
           </div>
-        ))}
-      </section>
+          <div className="form-group">
+            <label>Min Temperature (°C)</label>
+            <input
+              type="number"
+              name="temperature"
+              value={thresholds.temperature}
+              onChange={handleThresholdChange}
+            />
+          </div>
+        </section>
 
-      {/* System Thresholds */}
-      <section className="settings-section">
-        <h3><Sliders className="inline-icon" /> System Thresholds</h3>
-        <div className="form-group">
-          <label>Min Soil Moisture (%)</label>
-          <input type="number" name="soilMoisture" value={thresholds.soilMoisture} onChange={handleThresholdChange} />
+        {/* Action Buttons */}
+        <div className="settings-actions">
+          <button className="btn-save" onClick={handleSave}>Save Changes</button>
+          <button className="btn-logout" onClick={handleLogout}>
+            <LogOut className="inline-icon" /> Logout
+          </button>
         </div>
-        <div className="form-group">
-          <label>Min Temperature (°C)</label>
-          <input type="number" name="temperature" value={thresholds.temperature} onChange={handleThresholdChange} />
-        </div>
-      </section>
-
-      {/* Action Buttons */}
-      <div className="settings-actions">
-        <button className="btn-save" onClick={handleSave}>Save Changes</button>
-        <button className="btn-logout" onClick={handleLogout}>
-          <LogOut className="inline-icon" /> Logout
-        </button>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };

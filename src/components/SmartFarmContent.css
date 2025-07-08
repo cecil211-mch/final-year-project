@@ -2,42 +2,46 @@
   --primary-green: #2ecc71;
   --dark-green: #27ae60;
   --light-green: #a9dfbf;
-  --text-color: #333333;
-  --background-color: #ffffff;
-  --button-hover: #1e8449;
-  --border-color: #e0e0e0;
+  --text-dark: #222;
+  --text-muted: #555;
+  --bg-white: #ffffff;
+  --btn-hover: #1e8449;
+  --border-light: #e0e0e0;
 }
 
 .smart-farm-app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--background-color);
+  background-color: var(--bg-white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .smart-farm-main {
   flex: 1;
   padding: 4rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: var(--bg-white);
 }
 
 .smart-farm-container {
   display: flex;
   flex-direction: row;
-  max-width: 1200px;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
   gap: 3rem;
-  flex-wrap: wrap;
-  background-color: var(--background-color);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   padding: 3rem;
+  border-radius: 12px;
+  background-color: var(--bg-white);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
 }
 
+/* Left Text Section */
 .smart-farm-text {
   flex: 1;
   min-width: 280px;
@@ -52,50 +56,36 @@
 
 .smartfarm-subtitle {
   font-size: 1.125rem;
-  color: var(--text-color);
-  line-height: 1.6;
+  color: var(--text-muted);
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  min-width: 140px;
+  gap: 1rem;
 }
 
 .btn-primary {
   background-color: var(--primary-green);
   color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
 }
 
 .btn-primary:hover {
-  background-color: var(--dark-green);
+  background-color: var(--btn-hover);
 }
 
-.btn-secondary {
-  background-color: #ffffff;
-  color: var(--dark-green);
-  border: 2px solid var(--primary-green);
-}
-
-.btn-secondary:hover {
-  background-color: var(--light-green);
-  color: #ffffff;
-  border-color: var(--dark-green);
-}
-
+/* Right Image Section */
 .smart-farm-illustration {
   flex: 1;
   min-width: 280px;
@@ -105,9 +95,11 @@
 .smart-farm-illustration img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
 }
 
-/* Responsive adjustments */
+/* Responsive layout */
 @media (max-width: 768px) {
   .smart-farm-container {
     flex-direction: column;
@@ -120,5 +112,9 @@
 
   .smartfarm-subtitle {
     font-size: 1rem;
+  }
+
+  .cta-buttons {
+    justify-content: center;
   }
 }

@@ -7,6 +7,7 @@ import CreateAccountPage from './components/CreateAccountPage';
 import ForgotPassword from './components/ForgotPassword';
 import Notification from './components/Notification';
 import Settings from './components/Settings';
+import Help from './components/Help';
 import { Navigate } from 'react-router-dom';
 const App = () => {
   return (
@@ -18,9 +19,8 @@ const App = () => {
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/Notification" element={<Notification/>}/>
         <Route path ="/Settings" element={<Settings/>}/>
-      
+        <Route path="/Help" element={<Help/>}/>
         <Route path="/dashboard" element={<Dashboard />} />
-
         {/* Redirect all other unmatched routes to Landing Page */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
